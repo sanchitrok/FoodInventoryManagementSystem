@@ -1,0 +1,395 @@
+<!DOCTYPE html >
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<title>IMS</title>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/angular.min.js"
+	th:src="@{/angular.min.js}"></script>
+<script type="text/javascript" src="/static/app/app.module.js"
+	th:src="@{/app/app.module.js}"></script>
+<script type="text/javascript" src="/static/app/products.controller.js"
+	th:src="@{/app/products.controller.js}"></script>
+	
+<link href="style1.css" rel="stylesheet" />
+</head>
+
+<body ng-app="app" ng-controller=" ProductsController as m">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button id="startbutton" type="button"
+					class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#navbar-collapse-main" />
+				<span class="sr-only">Toggle Navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+				</button>
+				
+			</div>
+
+			<div class="collapse navbar-collapse" id="navbar-collapse-main">
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li><a class="active" href="#show">Show</a></li>
+					<li><a class="active" href="#update">Modify</a></li>
+					<li><a class="active" href="#search">Search</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="home">
+		<div class="landing-text">
+			<h1 style="color: #FFF">Inventory Management System</h1>
+			
+		</div>
+	</div>
+
+	<div id="About" class="padding">
+		<div class="container">
+			<div class="col-sm-3">
+				<img src="Food2.png" alt="Food2" class="center">
+			</div>
+			
+		</div>
+	</div>
+	</div>
+<center> <h1>Meet Team Python</h1> </center>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+   <center> <h2>Mrinal</h2> </center>
+<center> <h3>Co-Founder</h3> </center>
+    <p style="color:blue"> Degree: Master of Science</p>
+<p style="color:blue"> Major: Management Information Systems</p>
+<p style="color:blue"> UIN: 673713717</p>
+<p style="color:blue"> Hobbies: Reading, Painting, etc.</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+  <center>  <h2>Samar</h2> </center>
+<center> <h3>Co-Founder</h3> </center>
+    <p style="color:blue"> Degree: Master of Science</p>
+<p style="color:blue"> Major: Management Information Systems</p>
+<p style="color:blue"> UIN: 660272397</p>
+<p style="color:blue"> Hobbies: Reading, Painting, etc.</p>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <center><h2>Niharika</h2> </center>
+<center> <h3>Co-Founder</h3> </center>
+    <p style="color:blue"> Degree: Master of Science</p>
+<p style="color:blue"> Major: Management Information Systems</p>
+<p style="color:blue"> UIN: 673713717</p>
+<p style="color:blue"> Hobbies: Reading, Dancing, etc.</p>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <center><h2>Sanchit</h2> </center>
+<center> <h3>Co-Founder</h3> </center>
+    <p style="color:blue"> Degree: Master of Science</p>
+<p style="color:blue"> Major: Management Information Systems</p>
+<p style="color:blue"> UIN: 677781611</p>
+<p style="color:blue"> Hobbies: Listening to Music, Painting, etc.</p>
+  </div>
+</div>
+
+
+<center> <h1>Our Target Market</h1>
+<p> We work with businesses in the Food Industry, Join us today!
+</p> </center> 
+
+<div id="piechart" style='width: 1420px; height: 450px;'></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['Food Truck', 8],
+  ['Restaurant', 2],
+  ['Bakery', 6],
+  ['Café', 8]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'width':1420, 'height':450};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+<center> <h1>Python's Performance</h1>
+<p> Sales, Expenses and Profit: February, March, April 2020
+</p> </center>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Sales', 'Expenses', 'Profit'],
+          ['February', 350, 225, 75],
+          ['March', 500, 250, 100],
+          ['April', 660, 270, 200],
+       
+        ]);
+
+        var options =  {'width':800, 'height':500 };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <div id="columnchart_material" style="align: center; width: 400px; height: 500px"></div>
+<h3 style="text-align:center"> <strong> Advantages of using our IMS </strong> </h3>
+<h4 style="text-align:center"> Reducing Inaccuracies </h4> 
+<h4 style="text-align:center"> Stock Management </h4> 
+<h4 style="text-align:center"> Ease of use </h4>
+
+	
+
+
+		<div id="upload">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3>
+							<strong>Upload CSV File</strong>
+						</h3>
+						<p>Current Implementation support only csv file.</p>
+						<br />
+						<form id="uploadform" method="POST"
+							enctype="multipart/form-data">
+							Select a file: <input type="file" name="file" accept=".csv"
+								multiple><br> <input class="btn btn-success"
+								type="submit" value="Upload" id="btnSubmit"/>
+						</form>
+						<br />
+						<div  id="uploadsuccess" class="alert alert-success" role="alert"  >File uploaded successfully</div>
+						<div  id="uploadfailure" class="alert alert-danger" role="alert" >File upload failed</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="show">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>
+						<strong>Show Inventory</strong>
+					</h3>
+					<p>Display complete inventory</p>
+					<select ng-model="selectedfield" name="selectField" style="width: 175px; height: 26.5px;"
+						ng-options="x.field for x in options" placeholder="Select parameter">
+						<option value="">- Select Parameter -</option>
+					</select>
+					<input type="text"
+						ng-model="searchparameter" placeholder="Enter Value" />
+
+					<div class="btn-group" role="group">
+						<button
+							ng-click="m.getbyParam(selectedfield.field,searchparameter);show = !show "
+							type="button" class="btn btn-success btn-md">Fetch By
+							Parameter</button>
+						<button ng-click="m.getAll();show = !show " type="button"
+							class="btn btn-success btn-md">Fetch All</button>
+					</div>
+
+					<!-- Display products in a table -->
+					<div id="productTable" ng-show="show;">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Product Id</th>
+									<th>Product</th>
+									<th>Model</th>
+									<th>Manufacture</th>
+									<th>Type Code</th>
+									<th>Location Code</th>
+									<th>Msrp</th>
+									<th>Unit Cost</th>
+									<th>Discount Rate</th>
+									<th>stock_qty</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="product in m.products">
+									<td>{{product.product_id}}</td>
+									<td>{{product.product}}</td>
+									<td>{{product.model}}</td>
+									<td>{{product.manufacture}}</td>
+									<td>{{product.type_code}}</td>
+									<td>{{product.location_code}}</td>
+									<td>{{product.msrp}}</td>
+									<td>{{product.unit_cost}}</td>
+									<td>{{product.discount_rate}}</td>
+									<td>{{product.stock_qty}}</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+					<br />
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="update">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>
+						<strong>Modify Inventory</strong>
+					</h3>
+					<p>Allows to update or delete product in inventory</p>
+					<br />
+					<div ng-class="updateproduct">
+						<h4>Update Inventory</h4>
+						<input type="text" ng-model="productid" placeholder="Enter product id" /><br/><br/>
+						<select ng-model="selectedfield2" ng-options="x.field for x in options2"></select> 
+						<input type="text" ng-model="newvalue" placeholder="Enter new value" />
+						
+						<button type="button" ng-click="m.updateProduct(selectedfield2.field,newvalue,productid)"class="btn btn-success btn-md" ng-model="show1">Update</button>
+						<br/><br/>
+						<div  ng-if="m.updatestatus1==1" class="alert alert-success" role="alert" >Product successfully updated</div>
+						<div  ng-if="m.updatestatus1==0" class="alert alert-danger" role="alert" >Update failed</div>
+					</div>
+
+					<div ng-class="deletproduct">
+					<h4>Delete Inventory</h4>
+						<input type="text" ng-model="deleteid" placeholder="Enter product id" />
+						<button type="button" ng-click="m.deleteProduct(deleteid)"class="btn btn-success btn-md">Delete</button><br/><br/>
+						<div  ng-if="m.deletestatus==1" class="alert alert-success" role="alert" >Product successfully deleted</div>
+						<div  ng-if="m.deletestatus==0" class="alert alert-danger" role="alert" >Product does not exist</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="search">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>
+						<strong>Search Inventory</strong>
+					</h3>
+					<p>Allows to search product in inventory</p>
+					<select ng-model="selectedfield1"
+						ng-options="x.field for x in options1"></select> <input
+						type="text" ng-model="searchparameter1" placeholder="Enter Value" />
+
+					<div class="btn-group" role="group">
+						<button
+							ng-click="m.getbyParam(selectedfield1.field,searchparameter1);show1 = !show1 "
+							type="button" class="btn btn-success btn-md">Search By
+							Parameter</button>
+					</div>
+
+					<!-- Display products in a table -->
+					<div id="productTable1" ng-show="show1">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Product Id</th>
+									<th>Product</th>
+									<th>Model</th>
+									<th>Manufacture</th>
+									<th>Type Code</th>
+									<th>Location Code</th>
+									<th>Msrp</th>
+									<th>Unit Cost</th>
+									<th>Discount Rate</th>
+									<th>stock_qty</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="product in m.products">
+									<td>{{product.product_id}}</td>
+									<td>{{product.product}}</td>
+									<td>{{product.model}}</td>
+									<td>{{product.manufacture}}</td>
+									<td>{{product.type_code}}</td>
+									<td>{{product.location_code}}</td>
+									<td>{{product.msrp}}</td>
+									<td>{{product.unit_cost}}</td>
+									<td>{{product.discount_rate}}</td>
+									<td>{{product.stock_qty}}</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+					<br /> <br />
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<script type="text/javascript" src="/js/app.js"></script>
+<br> 
+<br> 
+<br>
+<br>
+<h3 style="text-align:center"><strong>Want to learn how we created this system?</strong></h3>
+<center> <p> Watch these videos now! </p> <center>
+  <center> <iframe width="200" height="150" 
+    src="https://www.youtube.com/embed/OnmVTToq32I">
+</iframe> 
+ <iframe width="200" height="150" 
+    src="https://www.youtube.com/embed/UfOxcrxhC0s">
+</iframe>
+<br>
+<br>
+<br>
+<br>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLThXR-K69pGWux2Sgl-nMNQCXykoEafbtC45VeoykWEnDrw/viewform?embedded=true" width="1500" height="1300" frameborder="0" marginheight="0" marginwidth="0" align = middle>Loading…</iframe>
+</center>
+</body>
+</head>
+</html>
